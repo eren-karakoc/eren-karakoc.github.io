@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eren Karakoç. Kişisel web sitesi hazırlanıyor.">
+    <meta property="og:title" content="Eren Karakoç">
+    <meta property="og:description" content="Eren Karakoç - Kişisel Web Sitesi">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+
+    <title>Eren Karakoç</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Sadece renkleri samimi kahve tonlarıyla güncelledim */
+            --bg-color: #F2F0E9;       
+            --card-bg: #FFFFFF;        
+            --text-primary: #524239;   /* Yumuşak kahve */
+            --text-secondary: #8C7569; 
+            --accent-color: #A67B5B;   /* Taba vurgu rengi */
+            --gradient-start: #524239; 
+            --gradient-end: #A67B5B;   
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* SEÇİLMEYİ VE KOPYALANMAYI ENGELLEYEN KISIM */
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none;      /* IE 10 ve sonrası */
+            user-select: none;          /* Standart tarayıcılar */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Manrope', sans-serif;
+            min-height: 100dvh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            /* Sağ tık menüsünü engellemek istersen JavaScript gerekebilir ama 
+               görsel seçim engeli için CSS yeterlidir. */
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: clamp(60px, 10vw, 90px) clamp(25px, 6vw, 50px);
+            border-radius: 4px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(166, 123, 91, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: revealUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        .eyebrow {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+            display: block;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 40px; 
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 span {
+            font-style: italic;
+        }
+
+        .description {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .description p {
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+
+        @media (max-width: 600px) {
+            .card { padding: 60px 25px; }
+        }
+
+        @media (max-height: 500px) and (orientation: landscape) {
+            body { align-items: flex-start; }
+            .card { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;"> <main class="card">
+        <span class="eyebrow">Kişisel Web Sitesi</span>
+        <h1 class="delay-1">Eren <span>Karakoç</span></h1>
+        
+        <div class="description delay-2">
+            <p>Çok yakında yeni bir deneyimle burada olacağım.</p>
+            
+            <p>Kurumsal disiplini kodlama mantığıyla birleştirerek, geleceğin dijital çözümlerini üretmeyi hedefliyorum.</p>
+            
+            <p>Bu web sitesi, öğrenme yolculuğumun ve projelerimin vitrini olacak.</p>
+        </div>
+    </main>
+
+</body>
+</html>
